@@ -1,0 +1,4 @@
+jdbc.driver.class=com.mysql.cj.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/classicmodels?serverTimezone=UTC
+jdbc.login=root
+jdbc.passwd=root

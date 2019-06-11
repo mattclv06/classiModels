@@ -1,0 +1,95 @@
+body {
+    background-color: rgba(169, 169, 169, 0.24) !important;
+}
+
+h1, form {
+	text-align : center;
+	font-family : 'Crete Round', serif;
+	color: rgb(75, 75, 75);
+}
+
+h1{
+    padding-top: 3%;
+    padding-bottom: 1%;
+    font-size: 45px;
+}
+
+label {
+	display : inline-block;
+	width: 150px;
+	text-align: center;
+	color: rgb(255, 0, 0);
+}
+.form-group{
+	padding-right: 30%;
+	padding-left: 30%;
+}
+
+.bd-example {
+    height: 50%;
+    padding: 0px;
+}
+
+.page-footer{
+    padding-top : 5%;
+}
+
+.sign{
+    padding-top: 0.5%;
+    color:red;
+    font-size: 80%;
+}
+
+.logo{
+    width: 90px;
+    padding-top: 5%;
+    border-radius: 30%;
+}
+.navbar {
+    z-index: 1;
+}
+
+.bouton{
+    border-radius: 15%;
+}
+
+.navbar {
+    background-color: rgba(3, 19, 90, 0.774);
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+.carousel-item{
+    height: 10em;
+}
+
+img{
+    width: 100%;
+}
+
+html,
+body,
+header,
+.view {
+    height: 100%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: transparent ;
+    border-color: #007bff;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.section {
+    padding: 70px 0;
+    z-index: 2;
+    position: relative;
+}
