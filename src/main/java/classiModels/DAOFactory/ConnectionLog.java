@@ -2,39 +2,39 @@ package classiModels.DAOFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
-import classiModels.UserConnect.UserConnect;
-import classiModels.UserConnectDAO.UserConnectDAO;
-import classiModels.UserConnectDTO.UserConnectDTO;
+import classiModels.LoginConnect.LoginConnect;
+import classiModels.LoginConnectDAO.LoginConnectDAO;
+import classiModels.LoginConnectDTO.LoginConnectDTO;
 
 public class ConnectionLog {
-    String         login;
-    String         password;
-    UserConnectDAO userDAO;
-    UserConnect    user = new UserConnect();
-    int            resultat;
+    String          login;
+    String          password;
+    LoginConnectDAO LoginDAO;
+    LoginConnect    Login = new LoginConnect();
+    int             resultat;
 
-    public ConnectionLog( UserConnectDAO userDao ) {
-        this.userDAO = userDao;
+    public ConnectionLog( LoginConnectDAO LoginDao ) {
+        this.LoginDAO = LoginDao;
     }
 
-    public ConnectionLog( String login, String password, UserConnect user ) {
+    public ConnectionLog( String login, String password, LoginConnect Login ) {
         super();
         this.login = login;
         this.password = password;
-        this.user = user;
+        this.Login = Login;
     }
 
-    public UserConnect Connection( HttpServletRequest req ) {
+    public LoginConnect Connection( HttpServletRequest req ) {
         login = req.getParameter( "txtLogin" );
         password = req.getParameter( "txtPassword" );
 
-        user.setUser( login );
-        user.setmdp( password );
+        Login.setLogin( login );
+        Login.setPassword( password );
 
-        UserConnectDTO userDTO = new UserConnectDTO( user );
-        resultat = userDAO.checklog( userDTO );
+        LoginConnectDTO LoginDTO = new LoginConnectDTO( Login );
+        resultat = LoginDAO.checklog( LoginDTO );
 
-        return user;
+        return Login;
     }
 
     public int getResultat() {

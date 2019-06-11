@@ -1,4 +1,4 @@
-package classiModels.UserConnectDAO;
+package classiModels.LoginConnectDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,27 +6,27 @@ import java.sql.SQLException;
 
 import classiModels.DAOFactory.AbstractDAO;
 import classiModels.DAOFactory.DAOFactory;
-import classiModels.UserConnectDTO.UserConnectDTO;
+import classiModels.LoginConnectDTO.LoginConnectDTO;
 
-public class UserConnectDAO extends AbstractDAO<UserConnectDTO> {
+public class LoginConnectDAO extends AbstractDAO<LoginConnectDTO> {
 
-    public UserConnectDAO( DAOFactory daofactory ) {
+    public LoginConnectDAO( DAOFactory daofactory ) {
         super( daofactory );
         // TODO Auto-generated constructor stub
     }
 
-    int    idUserConnect = 0;
-    String User          = "";
-    String mdp           = "";
+    int    idLoginConnect = 0;
+    String Login          = "";
+    String Password       = "";
 
-    public int checklog( UserConnectDTO obj ) {
+    public int checklog( LoginConnectDTO obj ) {
 
         int checklog = 0;
-        String user = obj.getUser();
-        String mdp = obj.getmdp();
-        String sql = "SELECT count(*) FROM userconnect where user = '" + user.toString()
-                + "' and mdp = '"
-                + mdp.toString() + "'";
+        String Login = obj.getLogin();
+        String Password = obj.getPassword();
+        String sql = "SELECT count(*) FROM logins where login = '" + Login.toString()
+                + "' and password = '"
+                + Password.toString() + "'";
 
         try {
             // Cr�étion de la requ�te

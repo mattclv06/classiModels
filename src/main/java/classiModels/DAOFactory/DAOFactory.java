@@ -9,6 +9,8 @@ import java.util.Properties;
 
 import com.mysql.cj.exceptions.DataTruncationException;
 
+import classiModels.LoginConnectDAO.LoginConnectDAO;
+
 public class DAOFactory {
     private static final String FICHIER_PROPERTIES       = "/classiMOdels/DAOFactory/properties.props";
     private static final String PROPERTY_URL             = "jdbc.url";
@@ -17,12 +19,12 @@ public class DAOFactory {
     private static final String PROPERTY_MOT_DE_PASSE    = "jdbc.passwd";
 
     private String              url;
-    private String              username;
+    private String              Loginname;
     private String              password;
 
-    DAOFactory( String url, String username, String password ) {
+    DAOFactory( String url, String Loginname, String password ) {
         this.url = url;
-        this.username = username;
+        this.Loginname = Loginname;
         this.password = password;
     }
 
@@ -72,7 +74,12 @@ public class DAOFactory {
     /* Méthode chargée de fournir une connexion à la base de données */
     public Connection getConnection() throws SQLException {
         System.out.println( "Connexion a la base de donnée !" );
-        return DriverManager.getConnection( url, username, password );
+        return DriverManager.getConnection( url, Loginname, password );
+    }
+
+    public LoginConnectDAO getLoginConnectDAO() {
+        System.out.println( "entrée getLoginDAO" );
+        return new LoginConnectDAO( this );
     }
 
 }
