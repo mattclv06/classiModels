@@ -32,12 +32,6 @@ public class Login extends HttpServlet {
     protected void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
 
-        String ChampLog = request.getParameter( "log" );
-        String ChampPass = request.getParameter( "pass" );
-        // String regex = "(!)";
-        //
-        // ChampLog.matches( regex );
-
         Forms connect = new Forms( userconnectDAO );
         UserConnect user = connect.Connection( request );
 
@@ -51,10 +45,10 @@ public class Login extends HttpServlet {
         if ( connect.getResultat() == 1 ) {
             session.setAttribute( "login", user );
             System.out.println( "ok" );
-            request.getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+            request.getRequestDispatcher( "/WEB-INF/Connected.jsp" ).forward( request, response );
         } else {
             session.setAttribute( "isConnected", false );
-            request.getRequestDispatcher( "index.html" ).forward( request, response );
+            request.getRequestDispatcher( VUE ).forward( request, response );
         }
     }
 

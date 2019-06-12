@@ -66,10 +66,6 @@
   </nav>
   <!-- Navbar -->
 
-	<div>
-		
-	</div>
-
   <!-- Full Page Intro -->
   <div class="view full-page-intro"
     style="background-image: url('img/S700_1938.jpg'); background-repeat: no-repeat; background-size: cover;">
@@ -107,7 +103,7 @@
               <div class="card-body">
 
                 <!-- Form -->
-                <form method="POST" action="Login" id="mainForm">
+                <form method="POST" action="Login">
                   <!-- Heading -->
                   <h3 class="dark-grey-text text-center">
                     <strong> Sign in :</strong>
@@ -116,18 +112,17 @@
 
                   <div class="md-form">
                     <i class="fas fa-user prefix grey-text"></i>
-                    <input type="text" id="form3" name="log" class="form-control champ" required="required"
-                    minlength="2" maxlength="10">
+                    <input type="text" id="form3" name="log" class="form-control">
                     <label for="form3">Login </label>
                   </div>
                   <div class="md-form">
                     <i class="fas fa-unlock prefix grey-text"></i>
-                    <input type="password" id="form2" name="pass" class="form-control" required="required" minlength="2" maxlength="10">
+                    <input type="password" id="form2" name="pass" class="form-control">
                     <label for="form2">Password</label>
                   </div>
 
                   <div class="text-center">
-                    <button class="btn btn-indigo" type="submit" id="submit"> Connect </button>
+                    <button class="btn btn-indigo" type="submit"> Connect </button>
                   </div>
                 </form>
                 <!-- Form -->
@@ -175,11 +170,9 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src="js/popper.min.js"></script>
-  <script src="js/mattJs.js"></script>
   <!-- Bootstrap core JavaScript -->
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
@@ -188,9 +181,6 @@
   <script type="text/javascript">
     // Animations initialization
     new WOW().init();
-  </script>
-  <script>
-  	
   </script>
 </body>
 
