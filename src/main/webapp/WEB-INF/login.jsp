@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Veuillez vous authentifier</title>
+        <title>Page Client </title>
         <link rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Crete+Round" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/> <!-- CDN FontAwesome -->
@@ -13,130 +13,151 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/> <!-- Responsive design -->
 		<meta name="theme-color" content="code couleur"/> <!-- Couleur navigateur Chrome Mobile -->
     	<style><%@include file="/css/styles.css"%></style>
-    </head>
-    <body>
-     <nav class="navbar navbar-expand-sm navbar-dark">
- 		 <a class="navbar-brand" href="#">McKING</a>
-  			<ul class="navbar-nav">
-    			<li class="nav-item">
-      	 <a class="nav-link" href="/Base/">Accueil</a>
-    			</li>
-    			<li class="nav-item">
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Comment ça marche ?
-</button>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+</head>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="false">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Comment ça marche ?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Connectez-vous ensuite vous aurez accès à votre compte ! pour ensuite avoir une large selection et création de menu en fonction de divers pathologie
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-    			</li>
-  			</ul>
-	</nav>
- 
-    	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-			  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			  <li data-target="#myCarousel" data-slide-to="1"></li>
-			  <li data-target="#myCarousel" data-slide-to="2"></li>
-			</ol>
-			<div class="carousel-inner">
-			  <div class="carousel-item active">
-					<img src="<%=request.getContextPath()%>/img/12.jpg" alt="...">
-				<div class="container">
-				  <div class="carousel-caption text-left">
-					<h1 style="color:whitesmoke">Texte 1 </h1>
-					<p>desc 1 </p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="carousel-item">
-				  <img src="<%=request.getContextPath()%>/img/10.jpg" alt="...">
-				<div class="container">
-					<div class="carousel-caption">
-					<h1 style="color:whitesmoke">Texte 2 </h1>
-					<p>desc 2 </p>
-				  </div>
-				</div>
-			  </div>
-			  <div class="carousel-item">
-					<img src="<%=request.getContextPath()%>/img/14.jpg" alt="...">
-				<div class="container">
-				  <div class="carousel-caption text-right">
-					<h1 style="color:whitesmoke">Texte 2 </h1>
-					<h1 >Texte 3</h1>
-					<p>descr1 </p>
-				  </div>
-				</div>
-			  </div>
-			</div>
-			<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Next</span>
-			</a>
-		  </div>
-    
-    	<c:if test="${not empty login }"></c:if>
-<form method='post' action='login'>
-			<img class="logo" src="<%=request.getContextPath()%>/img/01.jpg" alt="Logo">
-			<h1> Please sign in </h1>
-		<div class="form-group">
-			<input name='txtLogin' type="text" class="form-control" value='' placeholder="Login">
-			<small id="loginhelp" class="form-text text-muted">Ne confier vos identifiants à personne sauf à votre femme</small>
-		</div>
-		<div class="form-group">
-			<input name='txtPassword' type="password" value='' class="form-control" placeholder="Password">
-		</div>
-		<input name='btnConnect' class="bouton" type='submit' value='Sign in' />
-		<div class="sign">
-			<a href="#" style="color : rgb(104, 104, 104)" >I forgot my password :/ </a>
-			<br>
-			<a href="#" style="color : rgb(104, 104, 104)"> Sign up here :)  </a>
-		</div>
-</form>
+<body>
 
-
-
-<footer class="page-footer font-small mdb-color darken-3 pt-4">
+  <!-- Navbar -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
-      <!--Grid row-->
-      <div class="row d-flex justify-content-center">
-        <!--Grid column-->
-        <div class="col-md-6">
-          <div class="embed-responsive embed-responsive-16by9 mb-4">
-            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/3egagRvougI" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href="https://www.youtube.com/watch?v=3egagRvougI&list=RD3egagRvougI&start_radio=1"> King@</a>
+      <!-- Collapse -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <!-- Left -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Right -->
+        <ul class="navbar-nav nav-flex-icons">
+          <li class="nav-item">
+            <a href="https://www.facebook.com/mdbootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://twitter.com/MDBootstrap" class="nav-link" target="_blank">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="https://github.com/mdbootstrap/bootstrap-material-design"
+              class="nav-link border border-light rounded" target="_blank">
+              <i class="fab fa-github mr-2"></i>MDB GitHub
+            </a>
+          </li>
+        </ul>
+
+      </div>
+
     </div>
+  </nav>
+  <!-- Navbar -->
+
+	<div>
+		
+	</div>
+
+  <!-- Full Page Intro -->
+  <div class="view full-page-intro"
+    style="background-image: url('img/S700_1938.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+    <!-- Mask & flexbox options-->
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+      <!-- Content -->
+      <div class="container">
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+          <!--Grid column-->
+          <div class="col-md-6 mb-4 white-text text-center text-md-left">
+
+            <h1 class="display-4 font-weight-bold couleurOrange">Classic Models</h1>
+
+            <hr class="hr-light">
+
+            <p class="mb-4 d-none d-md-block couleurOrange">
+              <strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, nisl id sollicitudin
+                vestibulum, leo nunc bibendum tortor, id porta purus nisl vitae lectus. Quisque mattis, ipsum non
+                ultricies faucibus, tellus felis sagittis velit, sed ultricies felis orci scelerisque est. Vestibulum
+                egestas congue turpis vitae convallis </strong>
+            </p>
+
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Content -->
+    </div>
+    <!-- Mask & flexbox options-->
+  </div>
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mt-4 wow fadeIn couleurFramboise">
+    <!--Call to action-->
+    <div class="pt-4">
+      <ul>
+        <li>
+         <a href="">Informations </a> 
+        </li>
+        <li>
+         <a href=""> Plan of site </a> 
+        </li>
+        <li>
+         <a href="">Contact </a> 
+        </li>
+      </ul>
+    </div>
+    <!--/.Call to action-->
+
+    <hr class="my-4">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 couleurBackOrange">
+      © 2019 Copyright:
+    </div>
+    <!--/.Copyright-->
+
   </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <!-- CDN jQuery -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> <!-- CDN Popper.js -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> <!-- CDN JavaScript Bootstrap  -->  
     </body>
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script src="js/mattJs.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+  </script>
 </html>

@@ -34,8 +34,8 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             /* Récupération d'une connexion depuis la Factory */
             connexion = daofactory.getConnection();
             /*
-             * Préparation de la requête avec les objets passés en arguments
-             * (ici, uniquement une adresse email) et exécution.
+             * Préparation de la requête avec les objets passés en arguments et
+             * exécution.
              */
             preparedStatement = initialisationRequetePreparee( connexion, SQL_Count, false, login, password );
             resultSet = preparedStatement.executeQuery();
