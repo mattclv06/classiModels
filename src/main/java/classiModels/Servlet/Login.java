@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
         /*
          * session.invalidate();
          */
-        System.out.println( "in the doPost" );
+        System.out.println( "in the dooPost" );
         HttpSession session = request.getSession( true );
 
         if ( connect.getResultat() == 1 ) {
