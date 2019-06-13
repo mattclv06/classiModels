@@ -11,6 +11,15 @@ import com.mysql.cj.exceptions.DataTruncationException;
 
 import classiModels.BDD.DAO.UserConnectDAOImpl;
 
+/* (3)
+ * Création du DAOFActory qui va servir a faire la connexion ! 
+ * auparavant on va crée un fichier properties ou on donnera
+ * les paramètres de la connexion a la base de donnée
+ * 
+ * Ce DAOFactory prendra en compte 3 paramètres 
+ * 
+ * 
+ */
 public class DAOFactory {
     private static final String FICHIER_PROPERTIES       = "classiModels/BDD/properties.props";
     private static final String PROPERTY_URL             = "jdbc.url";

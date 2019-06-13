@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import classiModels.BDD.DAOFactory;
 import classiModels.beans.UserConnect;
 
+/* (5)
+ * création de UserConnectDAOimpl qui étend abstractDAO qui prend en objet un userConnect
+ * et qui implémente L'interface UserConnectDAO avec sa méthode 
+ * commencé par connecté l'objet à la connexion ! 
+ */
 public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements UserConnectDAO {
 
     public UserConnectDAOImpl( DAOFactory daofactory ) {
@@ -35,7 +40,8 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             connexion = daofactory.getConnection();
             /*
              * Préparation de la requête avec les objets passés en arguments
-             * (ici, uniquement une adresse email) et exécution.
+             * dans la DAOFactory (ici, la connexion + la requete SQL + le
+             * boolean + les param ) et exécution.
              */
             preparedStatement = initialisationRequetePreparee( connexion, SQL_Count, false, login, password );
             resultSet = preparedStatement.executeQuery();
@@ -64,11 +70,11 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
         return userconnect;
     }
 
-    public int checklog( String login, String password ) {
+    public int checklogCustom( String login, String password ) {
 
-        int checklog = 0;
+        int checklogCustom = 0;
         String sql = "SELECT count(*) FROM logins where login = '" + login + "' and password = '"
-                + password + "'";
+                + password + "' and customerNumber";
 
         try {
             // Crï¿½Ã©tion de la requï¿½te
@@ -76,7 +82,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             ResultSet resultat = statement.executeQuery( sql );
             resultat.next();
 
-            checklog = resultat.getInt( 1 );
+            checklogCustom = resultat.getInt( 1 );
 
             resultat.close();
 
@@ -86,8 +92,59 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             System.out.println( exe.getMessage() );
         }
 
-        return checklog;
+        return checklogCustom;
 
+    }
+
+    public int checklogEmployee( String login, String password ) {
+
+        int checklogEmployee = 0;
+        String sql = "SELECT count(*) FROM logins where login = '" + login + "' and password = '"
+                + password + "' and employeeNumber";
+
+        try {
+            // Crï¿½Ã©tion de la requï¿½te
+            PreparedStatement statement = daofactory.getConnection().prepareStatement( sql );
+            ResultSet resultat = statement.executeQuery( sql );
+            resultat.next();
+
+            checklogEmployee = resultat.getInt( 1 );
+
+            resultat.close();
+
+            statement.close();
+            daofactory.getConnection().close();
+        } catch ( SQLException exe ) {
+            System.out.println( exe.getMessage() );
+        }
+
+        return checklogEmployee;
+
+    }
+
+    public boolean cOe() {
+        boolean custoOrEmploy = true;
+
+        String sql = "SELECT * FROM classicmodels.logins where customerNumber";
+
+        try {
+            // Crï¿½Ã©tion de la requï¿½te
+            PreparedStatement statement = daofactory.getConnection().prepareStatement( sql );
+            ResultSet resultat = statement.executeQuery( sql );
+            resultat.next();
+
+            if ( resultat.getObject( 0 ) == null ) {
+                custoOrEmploy = true;
+            }
+
+            resultat.close();
+
+            statement.close();
+            daofactory.getConnection().close();
+        } catch ( SQLException exe ) {
+            System.out.println( exe.getMessage() );
+        }
+        return custoOrEmploy;
     }
 
 }

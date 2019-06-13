@@ -1,28 +1,32 @@
 package classiModels.beans;
 
+/* (1)
+ * Création du Beans de l'utilisateur
+ * param ==> login, password et client ou employée? 
+ */
 public class UserConnect {
 
     private String  Login;
     private String  Password;
-    private boolean Client = true;
+    private boolean ClientOrEmployee = true;
 
     public UserConnect() {
 
     }
 
-    public UserConnect( String login, String password, boolean client ) {
+    public UserConnect( String login, String password, boolean clientoremployee ) {
         super();
         Login = login;
         Password = password;
-        Client = client;
+        ClientOrEmployee = clientoremployee;
     }
 
     public boolean isClient() {
-        return Client;
+        return ClientOrEmployee;
     }
 
-    public void setClient( boolean client ) {
-        Client = client;
+    public void setClient( boolean clientoremployee ) {
+        ClientOrEmployee = clientoremployee;
     }
 
     public String getLogin() {

@@ -32,8 +32,10 @@ public class Login extends HttpServlet {
     protected void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
 
-        Forms connect = new Forms( userconnectDAO );
-        UserConnect user = connect.Connection( request );
+        Forms connectCustom = new Forms( userconnectDAO );
+        Forms connectEmplo = new Forms( userconnectDAO );
+        UserConnect userCustom = connectCustom.ConnectionCustom( request );
+        UserConnect userEmploy = connectEmplo.ConnectionEmploy( request );
 
         // pour la deconnexion faire la methode
         /*
@@ -42,13 +44,16 @@ public class Login extends HttpServlet {
         System.out.println( "in the dooPost" );
         HttpSession session = request.getSession( true );
 
-        if ( connect.getResultat() == 1 ) {
-            session.setAttribute( "login", user );
+        if ( connectCustom.getResultat() == 1 ) {
+            session.setAttribute( "login", userCustom );
             System.out.println( "ok" );
-            request.getRequestDispatcher( "/WEB-INF/Connected.jsp" ).forward( request, response );
+            request.getRequestDispatcher( "/WEB-INF/login2.jsp" ).forward( request, response );
+        } else if ( connectEmplo.getResultat() == 1 ) {
+            request.getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
         } else {
             session.setAttribute( "isConnected", false );
-            request.getRequestDispatcher( VUE ).forward( request, response );
+            request.getRequestDispatcher( "index.html" ).forward( request, response );
+
         }
     }
 

@@ -8,6 +8,10 @@ import java.sql.Statement;
 
 import classiModels.BDD.DAOFactory;
 
+/* (4)
+ * création de l'abstractDAO qui prend un DAOFactory pour faire la connexion !
+ * 
+ */
 public abstract class AbstractDAO<T> {
 
     Statement            statement = null;
