@@ -6,35 +6,26 @@ package classiModels.beans;
  */
 public class UserConnect {
 
-    private String  Login;
-    private String  Password;
-    private boolean ClientOrEmployee = true;
+    private String login;
+    private String Password;
 
     public UserConnect() {
 
     }
 
-    public UserConnect( String login, String password, boolean clientoremployee ) {
+    public UserConnect( String login, String password ) {
         super();
-        Login = login;
-        Password = password;
-        ClientOrEmployee = clientoremployee;
-    }
+        this.login = login;
+        this.Password = password;
 
-    public boolean isClient() {
-        return ClientOrEmployee;
-    }
-
-    public void setClient( boolean clientoremployee ) {
-        ClientOrEmployee = clientoremployee;
     }
 
     public String getLogin() {
-        return Login;
+        return login;
     }
 
     public void setLogin( String login ) {
-        Login = login;
+        this.login = login;
     }
 
     public String getPassword() {

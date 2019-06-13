@@ -10,8 +10,7 @@ public class Forms {
     String             login;
     String             password;
     UserConnectDAOImpl userDAO;
-    UserConnect        user = new UserConnect();
-    boolean            cOe;
+    UserConnect        user;
     int                resultat;
 
     public Forms( UserConnectDAOImpl userDao ) {
@@ -31,8 +30,10 @@ public class Forms {
 
     public UserConnect ConnectionCustom( HttpServletRequest req ) {
         login = req.getParameter( "log" );
+        System.out.println( login );
         password = req.getParameter( "pass" );
-
+        System.out.println( password );
+        user = new UserConnect();
         user.setLogin( login );
         user.setPassword( password );
 
@@ -44,7 +45,7 @@ public class Forms {
     public UserConnect ConnectionEmploy( HttpServletRequest req ) {
         login = req.getParameter( "log" );
         password = req.getParameter( "pass" );
-
+        user = new UserConnect();
         user.setLogin( login );
         user.setPassword( password );
 

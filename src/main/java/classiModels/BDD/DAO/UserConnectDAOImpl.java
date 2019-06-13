@@ -14,6 +14,13 @@ import classiModels.beans.UserConnect;
  * commencé par connecté l'objet à la connexion ! 
  */
 public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements UserConnectDAO {
+    int    checklogCustom   = 0;
+    int    customNumber     = 0;
+
+    int    checklogEmployee = 0;
+    int    employee         = 0;
+
+    String nomPhoto;
 
     public UserConnectDAOImpl( DAOFactory daofactory ) {
         super( daofactory );
@@ -72,8 +79,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
 
     public int checklogCustom( String login, String password ) {
 
-        int checklogCustom = 0;
-        String sql = "SELECT count(*) FROM logins where login = '" + login + "' and password = '"
+        String sql = "SELECT count(*),customerNumber FROM logins where login = '" + login + "' and password = '"
                 + password + "' and customerNumber";
 
         try {
@@ -83,7 +89,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             resultat.next();
 
             checklogCustom = resultat.getInt( 1 );
-
+            customNumber = resultat.getInt( 2 );
             resultat.close();
 
             statement.close();
@@ -98,8 +104,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
 
     public int checklogEmployee( String login, String password ) {
 
-        int checklogEmployee = 0;
-        String sql = "SELECT count(*) FROM logins where login = '" + login + "' and password = '"
+        String sql = "SELECT count(*), employeeNumber FROM logins where login = '" + login + "' and password = '"
                 + password + "' and employeeNumber";
 
         try {
@@ -109,7 +114,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             resultat.next();
 
             checklogEmployee = resultat.getInt( 1 );
-
+            employee = resultat.getInt( 2 );
             resultat.close();
 
             statement.close();
@@ -122,10 +127,13 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
 
     }
 
-    public boolean cOe() {
-        boolean custoOrEmploy = true;
-
-        String sql = "SELECT * FROM classicmodels.logins where customerNumber";
+    public String getPhoto() {
+        String sql = "SELECT nom FROM images inner join  liensimages on imageId = id where ";
+        if ( customNumber == 0 ) {
+            sql += " employeeNumber = " + employee;
+        } else {
+            sql += " customerNumber = " + customNumber;
+        }
 
         try {
             // Crï¿½Ã©tion de la requï¿½te
@@ -133,9 +141,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
             ResultSet resultat = statement.executeQuery( sql );
             resultat.next();
 
-            if ( resultat.getObject( 0 ) == null ) {
-                custoOrEmploy = true;
-            }
+            nomPhoto = resultat.getString( 1 );
 
             resultat.close();
 
@@ -144,7 +150,7 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
         } catch ( SQLException exe ) {
             System.out.println( exe.getMessage() );
         }
-        return custoOrEmploy;
+        return nomPhoto;
     }
 
 }

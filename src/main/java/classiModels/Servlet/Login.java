@@ -20,7 +20,9 @@ import classiModels.tools.Forms;
 @WebServlet( "/Login" )
 public class Login extends HttpServlet {
     private static final long   serialVersionUID = 1L;
-    private static final String VUE              = "/WEB-INF/login.jsp";
+    private static final String VUECLIENT        = "/WEB-INF/LogClient.jsp";
+    private static final String VUEEPLOYEE       = "/WEB-INF/LogEmployee.jsp";
+    private static final String VUEINDEX         = "index.html";
 
     private UserConnectDAOImpl  userconnectDAO;
 
@@ -41,20 +43,22 @@ public class Login extends HttpServlet {
         /*
          * session.invalidate();
          */
-        System.out.println( "in the dooPost" );
         HttpSession session = request.getSession( true );
 
         if ( connectCustom.getResultat() == 1 ) {
             session.setAttribute( "login", userCustom );
+            session.setAttribute( "isConnected", true );
             System.out.println( "ok" );
-            request.getRequestDispatcher( "/WEB-INF/login2.jsp" ).forward( request, response );
+            request.getRequestDispatcher( VUECLIENT ).forward( request, response );
         } else if ( connectEmplo.getResultat() == 1 ) {
-            request.getRequestDispatcher( "/WEB-INF/login.jsp" ).forward( request, response );
+            session.setAttribute( "login", userEmploy );
+            session.setAttribute( "isConnected", true );
+            request.getRequestDispatcher( VUEEPLOYEE ).forward( request, response );
         } else {
             session.setAttribute( "isConnected", false );
-            request.getRequestDispatcher( "index.html" ).forward( request, response );
-
+            request.getRequestDispatcher( VUEINDEX ).forward( request, response );
         }
+
     }
 
 }
