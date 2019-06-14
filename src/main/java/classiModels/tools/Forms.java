@@ -12,6 +12,7 @@ public class Forms {
     UserConnectDAOImpl userDAO;
     UserConnect        user;
     int                resultat;
+    String             lienImage;
 
     public Forms( UserConnectDAOImpl userDao ) {
         this.userDAO = userDao;
@@ -32,7 +33,6 @@ public class Forms {
         login = req.getParameter( "log" );
         System.out.println( login );
         password = req.getParameter( "pass" );
-        System.out.println( password );
         user = new UserConnect();
         user.setLogin( login );
         user.setPassword( password );
@@ -60,6 +60,14 @@ public class Forms {
 
     public void setResultat( int resultat ) {
         this.resultat = resultat;
+    }
+
+    public String getLienImage() {
+        return lienImage;
+    }
+
+    public void setLienImage( String lienImage ) {
+        this.lienImage = lienImage;
     }
 
 }

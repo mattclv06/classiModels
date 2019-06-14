@@ -18,7 +18,7 @@ import classiModels.tools.Forms;
  * Servlet implementation class Login
  */
 @WebServlet( "/Login" )
-public class Login extends HttpServlet {
+public class LoginServlet extends HttpServlet {
     private static final long   serialVersionUID = 1L;
     private static final String VUECLIENT        = "/WEB-INF/LogClient.jsp";
     private static final String VUEEPLOYEE       = "/WEB-INF/LogEmployee.jsp";
@@ -39,6 +39,10 @@ public class Login extends HttpServlet {
         UserConnect userCustom = connectCustom.ConnectionCustom( request );
         UserConnect userEmploy = connectEmplo.ConnectionEmploy( request );
 
+        StringBuilder sb = new StringBuilder();
+        String lienImage = "/img/";
+        sb.append( lienImage ).append( userconnectDAO.getPhoto() );
+
         // pour la deconnexion faire la methode
         /*
          * session.invalidate();
@@ -48,11 +52,14 @@ public class Login extends HttpServlet {
         if ( connectCustom.getResultat() == 1 ) {
             session.setAttribute( "login", userCustom );
             session.setAttribute( "isConnected", true );
+
             System.out.println( "ok" );
             request.getRequestDispatcher( VUECLIENT ).forward( request, response );
+            session.setAttribute( "image", sb.toString() );
         } else if ( connectEmplo.getResultat() == 1 ) {
             session.setAttribute( "login", userEmploy );
             session.setAttribute( "isConnected", true );
+            session.setAttribute( "image", lienImage );
             request.getRequestDispatcher( VUEEPLOYEE ).forward( request, response );
         } else {
             session.setAttribute( "isConnected", false );
