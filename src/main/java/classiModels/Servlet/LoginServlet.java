@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
         UserConnect userEmploy = connectEmplo.ConnectionEmploy( request );
 
         StringBuilder sb = new StringBuilder();
-        String lienImage = "/img/Customers/";
+        String lienImage = "/img/";
         sb.append( lienImage ).append( userconnectDAO.getPhoto() );
 
         // pour la deconnexion faire la methode
@@ -52,14 +52,14 @@ public class LoginServlet extends HttpServlet {
         if ( connectCustom.getResultat() == 1 ) {
             session.setAttribute( "login", userCustom );
             session.setAttribute( "isConnected", true );
+
             System.out.println( "ok" );
             request.getRequestDispatcher( VUECLIENT ).forward( request, response );
             session.setAttribute( "image", sb.toString() );
-            System.out.println( sb );
         } else if ( connectEmplo.getResultat() == 1 ) {
             session.setAttribute( "login", userEmploy );
             session.setAttribute( "isConnected", true );
-            session.setAttribute( "image", sb.toString() );
+            session.setAttribute( "image", lienImage );
             request.getRequestDispatcher( VUEEPLOYEE ).forward( request, response );
         } else {
             session.setAttribute( "isConnected", false );
