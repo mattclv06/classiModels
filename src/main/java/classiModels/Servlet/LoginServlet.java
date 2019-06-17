@@ -45,19 +45,14 @@ public class LoginServlet extends HttpServlet {
     protected void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
 
-        Forms connectCustom = new Forms( userconnectDAO );
+    	Forms connectCustom = new Forms( userconnectDAO );
         Forms connectEmplo = new Forms( userconnectDAO );
         UserConnect userCustom = connectCustom.ConnectionCustom( request );
         UserConnect userEmploy = connectEmplo.ConnectionEmploy( request );
 
         StringBuilder sb = new StringBuilder();
-<<<<<<< HEAD
-        String lienImage = "/img/";
-        sb.append( lienImage ).append( userconnectDAO.getPhoto() );
-=======
         String lienImageCustom = "./img/Customers/";
         String lienImageEmploye = "./img/Employees/";
->>>>>>> avane
 
         // pour la deconnexion faire la methode
         /*
@@ -68,16 +63,9 @@ public class LoginServlet extends HttpServlet {
         if ( connectCustom.getResultat() == 1 ) {
             session.setAttribute( "login", userCustom );
             session.setAttribute( "isConnected", true );
-
             System.out.println( "ok" );
             sb.append( lienImageCustom ).append( userconnectDAO.getPhoto() );
             session.setAttribute( "image", sb.toString() );
-<<<<<<< HEAD
-        } else if ( connectEmplo.getResultat() == 1 ) {
-            session.setAttribute( "login", userEmploy );
-            session.setAttribute( "isConnected", true );
-            session.setAttribute( "image", lienImage );
-=======
             /*
              * retourne une liste de produits
              */
@@ -96,13 +84,11 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute( "isConnected", true );
             sb.append( lienImageEmploye ).append( userconnectDAO.getPhoto() );
             session.setAttribute( "image", sb.toString() );
->>>>>>> avane
             request.getRequestDispatcher( VUEEPLOYEE ).forward( request, response );
         } else {
             session.setAttribute( "isConnected", false );
             request.getRequestDispatcher( VUEINDEX ).forward( request, response );
-        }
-
+}
     }
 
 }
