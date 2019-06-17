@@ -2,8 +2,35 @@ package classiModels.beans;
 
 public class Employees {
 
-    private int    employeeNumber, reportsTo;
-    private String lastName, firstName, extension, officeCode, email, jobTitle;
+    private int         employeeNumber, reportsTo;
+    private String      lastName, firstName, extension, officeCode, email, jobTitle;
+    private Images      img;
+    private LiensImages liensImage;
+    private Offices     office;
+
+    public LiensImages getLiensImage() {
+        return liensImage;
+    }
+
+    public void setLiensImage( LiensImages liensImage ) {
+        this.liensImage = liensImage;
+    }
+
+    public Offices getOffice() {
+        return office;
+    }
+
+    public void setOffice( Offices office ) {
+        this.office = office;
+    }
+
+    public Images getImg() {
+        return img;
+    }
+
+    public void setImg( Images img ) {
+        this.img = img;
+    }
 
     public int getEmployeeNumber() {
         return employeeNumber;

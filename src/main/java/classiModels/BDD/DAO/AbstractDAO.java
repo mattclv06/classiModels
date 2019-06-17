@@ -21,6 +21,9 @@ public abstract class AbstractDAO<T> {
         this.daofactory = daofactory;
     }
 
+    // METHODE DE CREATION D'OBJET
+    public abstract T map( ResultSet result ) throws SQLException;
+
     /*
      * Initialise la requête préparée basée sur la connexion passée en argument,
      * avec la requête SQL et les objets donnés.
@@ -32,6 +35,7 @@ public abstract class AbstractDAO<T> {
         for ( int i = 0; i < objets.length; i++ ) {
             preparedStatement.setObject( i + 1, objets[i] );
         }
+        System.out.println( preparedStatement );
         return preparedStatement;
     }
 
@@ -80,4 +84,11 @@ public abstract class AbstractDAO<T> {
         fermetureSilencieuse( statement );
         fermetureSilencieuse( connexion );
     }
+
+    /* Fermetures silencieuses du statement et de la connexion */
+    public static void fermeturesSilencieuses( ResultSet result, Statement state ) {
+        fermetureSilencieuse( state );
+        fermetureSilencieuse( result );
+    }
+
 }
