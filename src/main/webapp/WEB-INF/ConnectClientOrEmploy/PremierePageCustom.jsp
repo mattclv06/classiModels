@@ -4,7 +4,7 @@
 
 <section id="choix">
 	<marquee>
-		<h1>Un message qui ce deplace pour dire que c'est un client</h1>
+		<h1>Un message qui ce deplace pour dire que c'est un client ! </h1>
 	</marquee>
 </section>
 <div style="display: flex; justify-content: center;">
