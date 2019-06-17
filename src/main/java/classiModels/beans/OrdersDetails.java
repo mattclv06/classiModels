@@ -1,6 +1,6 @@
 package classiModels.beans;
 
-public class OrderDetails {
+public class OrdersDetails {
 
     private int    orderNumber, quantityOrder, orderLineNumber;
     private float  priceEach;

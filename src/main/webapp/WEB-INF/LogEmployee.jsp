@@ -22,7 +22,7 @@
 		<!-- Responsive design -->
 		<meta name="theme-color" content="code couleur" />
 		<!-- Couleur navigateur Chrome Mobile -->
-		<title>Page Client </title>
+		<title>Page Employe !  </title>
 		<meta name="description" content="Ta description, ne pas depasser 155 caracteres">
 	</head>
 	<!-- ---------------------------------------------------NAVBAR---------------------------------------- -->
@@ -35,11 +35,11 @@
 		<!-- ligne de lien  -->
 		<section class="view full-page-intro"
     style="background-image: url('img/S700_1938.jpg'); background-repeat: no-repeat; background-size: cover;">
-			<c:import url="/WEB-INF/ConnectClientOrEmploy/MilieuClient.jsp"></c:import>
+			<c:import url="/WEB-INF/ConnectClientOrEmploy/MilieuEmployee.jsp"></c:import>
 		</section>
 	
 		<div id="retour">  
-			<c:import url="/WEB-INF/ConnectClientOrEmploy/PremierePageCustom.jsp" />
+			<c:import url="/WEB-INF/ConnectClientOrEmploy/PremierePageEmployee.jsp" />
 		</div>
 		<footer	class="page-footer text-center font-small mt-4 wow fadeIn couleurFramboise">
 			<c:import url="/Footer.jsp"></c:import>

@@ -69,10 +69,10 @@ public class UserConnectDAOImpl extends AbstractDAO<UserConnect> implements User
      * mapping) entre une ligne issue de la table des utilisateurs (un
      * ResultSet) et un bean Utilisateur.
      */
-    private static UserConnect map( ResultSet resultSet ) throws SQLException {
+    public UserConnect map( ResultSet result ) throws SQLException {
         UserConnect userconnect = new UserConnect();
-        userconnect.setLogin( resultSet.getString( "login" ) );
-        userconnect.setPassword( resultSet.getString( "password" ) );
+        userconnect.setLogin( result.getString( "login" ) );
+        userconnect.setPassword( result.getString( "password" ) );
         // userconnect.setId( resultSet.getLong( "id" ) );
         return userconnect;
     }

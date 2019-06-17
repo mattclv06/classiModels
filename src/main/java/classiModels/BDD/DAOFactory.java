@@ -9,6 +9,15 @@ import java.util.Properties;
 
 import com.mysql.cj.exceptions.DataTruncationException;
 
+import classiModels.BDD.DAO.CustomersDAO;
+import classiModels.BDD.DAO.EmployeesDAO;
+import classiModels.BDD.DAO.ImagesDAO;
+import classiModels.BDD.DAO.LiensImagesDAO;
+import classiModels.BDD.DAO.OfficesDAO;
+import classiModels.BDD.DAO.OrdersDAO;
+import classiModels.BDD.DAO.OrdersDetailsDAO;
+import classiModels.BDD.DAO.ProductLinesDAO;
+import classiModels.BDD.DAO.ProductsDAO;
 import classiModels.BDD.DAO.UserConnectDAOImpl;
 
 /* (3)
@@ -88,6 +97,50 @@ public class DAOFactory {
 
     public UserConnectDAOImpl getUserConnectDAO() {
         return new UserConnectDAOImpl( this );
+    }
+
+    public ProductsDAO getProductsDAO() {
+        return new ProductsDAO( this );
+    }
+
+    public ImagesDAO getImageDAO() {
+        return new ImagesDAO( this );
+    }
+
+    // public LoginsDAO getLoginsDAO() {
+    // return new LoginsDAO( this );
+    // }
+
+    public EmployeesDAO getEmployeesDAO() {
+        return new EmployeesDAO( this );
+    }
+
+    public CustomersDAO getCustomersDAO() {
+        return new CustomersDAO( this );
+    }
+
+    public LiensImagesDAO getLiensImagesDAO() {
+        return new LiensImagesDAO( this );
+    }
+
+    public ImagesDAO getImagesDAO() {
+        return new ImagesDAO( this );
+    }
+
+    public ProductLinesDAO getProductLinesDAO() {
+        return new ProductLinesDAO( this );
+    }
+
+    public OrdersDAO getOrdersDAO() {
+        return new OrdersDAO( this );
+    }
+
+    public OrdersDetailsDAO getOrdersDetailsDAO() {
+        return new OrdersDetailsDAO( this );
+    }
+
+    public OfficesDAO getOfficesDAO() {
+        return new OfficesDAO( this );
     }
 
 }

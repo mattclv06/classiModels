@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- 2 gros carré -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<script>
+<!-- <script>
 	var request;
 	function sendInfo() {
 		var v = document.vinform.t1.value;
@@ -29,10 +29,11 @@
 			document.getElementById('amit').innerHTML = val;
 		}
 	}
-</script>
+</script> 
+-->
 <section id="choix">
 	<marquee>
-		<h1>This is an example of ajax with database</h1>
+		<h1>Un message qui ce deplace pour dire que c'est un employee </h1>
 	</marquee>
 	<form name="vinform">
 		<input type="text" name="t1" onkeyup="sendInfo()">

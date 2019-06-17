@@ -2,10 +2,29 @@ package classiModels.beans;
 
 public class Customers {
 
-    private String customerName, contactName, contactFirstName, phone, adressLine1, adressLine2, city,
+    private String      customerName, contactName, contactFirstName, phone, adressLine1, adressLine2, city,
             state, postalCode, country;
-    private int    customerNumber, salesRepEmployeeNumber;
-    private float  creditLimit;
+    private int         customerNumber, salesRepEmployeeNumber;
+    private float       creditLimit;
+
+    private LiensImages liensImage;
+    private Images      img;
+
+    public LiensImages getLiensImage() {
+        return liensImage;
+    }
+
+    public void setLiensImage( LiensImages liensImage ) {
+        this.liensImage = liensImage;
+    }
+
+    public Images getImg() {
+        return img;
+    }
+
+    public void setImg( Images img ) {
+        this.img = img;
+    }
 
     public String getCustomerName() {
         return customerName;
