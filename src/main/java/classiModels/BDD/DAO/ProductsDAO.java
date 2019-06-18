@@ -12,14 +12,14 @@ import classiModels.beans.Products;
 public class ProductsDAO extends AbstractDAO<Products> {
 
     String                      nomPhoto;
-    private static final String SQL_Count = "SELECT * from products where productLine = ? limit 5";
+    private static final String SQL_Count = "SELECT * from products where productLine = ? limit 5 OFFSET ?";
 
     public ProductsDAO( DAOFactory daofactory ) {
         super( daofactory );
 
     }
 
-    public ArrayList<Products> trouver( String productLine ) {
+    public ArrayList<Products> trouver( String productLine, int index ) {
         Connection connexion = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -33,7 +33,7 @@ public class ProductsDAO extends AbstractDAO<Products> {
              * dans la DAOFactory (ici, la connexion + la requete SQL + le
              * boolean + les param ) et exécution.
              */
-            preparedStatement = initialisationRequetePreparee( connexion, SQL_Count, false, productLine );
+            preparedStatement = initialisationRequetePreparee( connexion, SQL_Count, false, productLine, index );
             resultSet = preparedStatement.executeQuery();
             /* Parcours de la ligne de données retournée dans le ResultSet */
             while ( resultSet.next() ) {

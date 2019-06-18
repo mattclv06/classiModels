@@ -7,6 +7,26 @@
   <listener>
     <listener-class>classiModels.BDD.config.InitialisationDAOFactory</listener-class>
 </listener>
+<servlet>
+  	<servlet-name>ProductLineServlet</servlet-name>
+  	<display-name>ProductLineServlet</display-name>
+  	<description></description>
+  	<servlet-class>classiModels.Servlet.ProductLineServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>Panier</servlet-name>
+  	<display-name>Panier</display-name>
+  	<description></description>
+  	<servlet-class>classiModels.Servlet.PanierServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ProductLineServlet</servlet-name>
+  	<url-pattern>/ProductLine</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Panier</servlet-name>
+  	<url-pattern>/Panier</url-pattern>
+  </servlet-mapping>
   <session-config>
   	<session-timeout>1</session-timeout>
   </session-config>

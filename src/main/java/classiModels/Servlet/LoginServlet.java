@@ -30,6 +30,7 @@ public class LoginServlet extends HttpServlet {
     private static final String VUEINDEX         = "index.html";
 
     private static final String maListe          = "ListProduct";
+    private String              index            = "index";
 
     private UserConnectDAOImpl  userconnectDAO;
     private ProductsDAO         productDAO;
@@ -69,11 +70,12 @@ public class LoginServlet extends HttpServlet {
             /*
              * retourne une liste de produits
              */
-            ArrayList<Products> listProduct = productDAO.trouver( "Classic Cars" );
-            System.out.println( "je suis la " );
             ArrayList<ProductLines> listLine = productLineDAO.findAll();
-            request.setAttribute( "listLine", listLine );
+            session.setAttribute( "listLine", listLine );
+            System.out.println( listLine.get( 0 ).getProductLine() );
+            ArrayList<Products> listProduct = productDAO.trouver( listLine.get( 0 ).getProductLine(), 0 );
             request.setAttribute( maListe, listProduct );
+            request.setAttribute( index, 0 );
             /*
              * renvoi vers la vue
              */
