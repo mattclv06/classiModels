@@ -7,7 +7,15 @@ public class Products {
     private float       msrp;
     private Images      img;
     private LiensImages liensImages;
-    private int         quantityInPanier;
+    private int         quProduit;
+
+    public int getQuProduit() {
+        return quProduit;
+    }
+
+    public void setQuProduit( int quProduit ) {
+        this.quProduit = quProduit;
+    }
 
     public LiensImages getLiensImages() {
         return liensImages;
@@ -15,14 +23,6 @@ public class Products {
 
     public void setLiensImages( LiensImages liensImages ) {
         this.liensImages = liensImages;
-    }
-
-    public int getQuantityInPanier() {
-        return quantityInPanier;
-    }
-
-    public void setQuantityInPanier( int quantityInPanier ) {
-        this.quantityInPanier = quantityInPanier;
     }
 
     public Images getImg() {
