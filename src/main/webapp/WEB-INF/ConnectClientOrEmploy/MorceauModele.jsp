@@ -64,9 +64,7 @@
 			pdtName : productNamePdt,
 			price : buyPricePdt
 		});
-		
-		
-		
+
 	}
 </script>
 
