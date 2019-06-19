@@ -7,7 +7,24 @@ public class Products {
     private float       msrp;
     private Images      img;
     private LiensImages liensImages;
-    private int         quantityInPanier;
+    private int         quProduit;
+    private double      total;
+
+    public double getTotal() {
+        return Math.round( ( buyPrice * quProduit ) * 100.00 ) / 100.00;
+    }
+
+    public void setTotal( double total ) {
+        this.total = total;
+    }
+
+    public int getQuProduit() {
+        return quProduit;
+    }
+
+    public void setQuProduit( int quProduit ) {
+        this.quProduit = quProduit;
+    }
 
     public LiensImages getLiensImages() {
         return liensImages;
@@ -15,14 +32,6 @@ public class Products {
 
     public void setLiensImages( LiensImages liensImages ) {
         this.liensImages = liensImages;
-    }
-
-    public int getQuantityInPanier() {
-        return quantityInPanier;
-    }
-
-    public void setQuantityInPanier( int quantityInPanier ) {
-        this.quantityInPanier = quantityInPanier;
     }
 
     public Images getImg() {
