@@ -46,7 +46,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost( HttpServletRequest request, HttpServletResponse response )
             throws ServletException, IOException {
 
-        Forms connectCustom = new Forms( userconnectDAO );
+    	Forms connectCustom = new Forms( userconnectDAO );
         Forms connectEmplo = new Forms( userconnectDAO );
         UserConnect userCustom = connectCustom.ConnectionCustom( request );
         UserConnect userEmploy = connectEmplo.ConnectionEmploy( request );
@@ -90,8 +90,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             session.setAttribute( "isConnected", false );
             request.getRequestDispatcher( VUEINDEX ).forward( request, response );
-        }
-
+}
     }
 
 }
