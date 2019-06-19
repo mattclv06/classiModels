@@ -3,70 +3,67 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div>
-	<c:if test="${index >= 5 }">
+	<c:if test="${index != 0 }">
 		<button id="prcd-${index}" class="btn btn-success prcd"
 			onclick="Precedent(this)">precedent</button>
 	</c:if>
 </div>
 
+<section
+	style="display: flex; justify-content: center; flex-wrap: wrap; width : 80%" >
 <c:forEach var="p" items="${ListProduct}">
-
-	<section>
-
-		<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="./img/Products/${p.img.nom}"
-				alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">
-					<c:out value="${p.productName}" />
-				</h5>
-				<p class="card-text">
-					<c:out value="${p.productDescription}" />
-				</p>
-		<input id="qu-${ p.productCode }" type="number" min="0" max="${p.quantityInStock }"/>
-				<button id="${p.productCode}" onclick="AjoutPanier(this)" class="btn btn-primary"><c:out value="${p.buyPrice}"/>
-					€</button>
-			</div>
+	<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="./img/Products/${p.img.nom}"
+			alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">
+				<c:out value="${p.productName}" />
+			</h5>
+			<button id="${p.productCode}" onclick="Ajout(this)"
+				class="btn btn-primary">
+				<c:out value="${p.buyPrice}" />
+				€
+			</button>
 		</div>
-	</section>
-		
-		<input id="price-${p.productCode}" type="hidden" value="${p.buyPrice }"/>
-		<input id="image-${p.productCode }" type="hidden" value="${p.img.nom}"/>
-		<input id="name-${p.productCode }" type="hidden" value ="${p.productName }"/>
+	</div>
 
+	<input id="price-${p.productCode}" type="hidden" value="${p.buyPrice }" />
+	<input id="image-${p.productCode }" type="hidden" value="${p.img.nom}" />
+	<input id="name-${p.productCode }" type="hidden"
+		value="${p.productName }" />
 </c:forEach>
 
+</section>
+
 <div>
-	<c:if test="${ListProduct.size() >= 5 }">
+	<c:if test="${ListProduct.size() >= 20 }">
 		<button id="svt-${index}" class="btn btn-success svt"
 			onclick="Suivant(this)">suivant</button>
 	</c:if>
 </div>
 
 <script>
-	function AjoutPanier(button){
+	function Ajout(button) {
 		// recupere id (code produit)
 		var idProduit = $(button).attr("id");
 		console.log(idProduit);
 		// Chercher la quantite
-		var quantiteProduit = $("#qu-"+idProduit).val();
+		var quantiteProduit = $("#qu-" + idProduit).val();
 		
-		var imagePdt = $('#image-'+idProduit).val();
-		var productNamePdt = $('#name-'+idProduit).val();
-		var buyPricePdt = $('#price-'+idProduit).val();
-		
+		var imagePdt = $('#image-' + idProduit).val();
+		var productNamePdt = $('#name-' + idProduit).val();
+		var buyPricePdt = $('#price-' + idProduit).val();
+
 		// Envoyer ces info a la servlet
 		$('#PanierClient').load('Panier', {
 			// id et quantite ==> le parametre de la requete  
-			id: idProduit,
-			quantite : quantiteProduit,
+			id : idProduit,
+			quantite : 1,
 			img : imagePdt,
 			pdtName : productNamePdt,
 			price : buyPricePdt
 		});
-		
-		
-		
+
 	}
 </script>
 

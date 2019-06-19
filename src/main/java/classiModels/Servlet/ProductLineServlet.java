@@ -39,9 +39,9 @@ public class ProductLineServlet extends HttpServlet {
         int index = 0;
 
         if ( request.getParameter( "suivant" ) != null ) {
-            index = Integer.parseInt( request.getParameter( "index" ) ) + 5;
+            index = Integer.parseInt( request.getParameter( "index" ) ) + 20;
         } else if ( request.getParameter( "precedent" ) != null ) {
-            index = Integer.parseInt( request.getParameter( "index" ) ) - 5;
+            index = Integer.parseInt( request.getParameter( "index" ) ) - 20;
         }
 
         ArrayList<Products> listProduct = productDAO.trouver( productLine, index );

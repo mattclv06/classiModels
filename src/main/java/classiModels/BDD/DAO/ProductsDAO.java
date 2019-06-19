@@ -12,7 +12,7 @@ import classiModels.beans.Products;
 public class ProductsDAO extends AbstractDAO<Products> {
 
     String                      nomPhoto;
-    private static final String SQL_Count = "SELECT * from products where productLine = ? limit 5 OFFSET ?";
+    private static final String SQL_Count = "SELECT * from products where productLine = ? limit 20 OFFSET ?";
 
     public ProductsDAO( DAOFactory daofactory ) {
         super( daofactory );

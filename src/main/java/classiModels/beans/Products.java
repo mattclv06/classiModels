@@ -8,6 +8,15 @@ public class Products {
     private Images      img;
     private LiensImages liensImages;
     private int         quProduit;
+    private double      total;
+
+    public double getTotal() {
+        return Math.round( ( buyPrice * quProduit ) * 100.00 ) / 100.00;
+    }
+
+    public void setTotal( double total ) {
+        this.total = total;
+    }
 
     public int getQuProduit() {
         return quProduit;
