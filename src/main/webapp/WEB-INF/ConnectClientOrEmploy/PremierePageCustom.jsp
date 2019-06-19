@@ -6,22 +6,8 @@
 	<c:import url="/WEB-INF/ConnectClientOrEmploy/panier.jsp"></c:import>
 </div>
 <section id="choix">
-<<<<<<< HEAD
-<<<<<<< HEAD
 	<marquee>
-		<h1>Un message qui ce deplace pour dire que c'est un client ! </h1>
-=======
-	<marquee> 
-		<h1>Un message qui ce deplace pour dire que c'est un client</h1>
->>>>>>> 05fa8b523b76fe8a5d456f292a606f4d449b9a48
-=======
-	<marquee> 
-		<h1>Un message qui ce deplace pour dire que c'est un client</h1>
-=======
-	<marquee>
-		<h1>Un message qui ce deplace pour dire que c'est un client ! </h1>
->>>>>>> bed5bbb92caeff9d5acfa61531a102e1c37238f0
->>>>>>> ff67d1571bb61e5f159f88e81226eded4e4414c6
+		<h1>Un message qui ce deplace pour dire que c'est un client et oui! </h1>
 	</marquee>
 </section>
 <div>
