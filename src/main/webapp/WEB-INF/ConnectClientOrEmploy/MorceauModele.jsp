@@ -2,15 +2,15 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<div>
+	<div style="display : flex ; justify-content: center ; align-items: center">
 	<c:if test="${index != 0 }">
 		<button id="prcd-${index}" class="btn btn-success prcd"
 			onclick="Precedent(this)">precedent</button>
 	</c:if>
-</div>
+</div> 
 
 <section
-	style="display: flex; justify-content: center; flex-wrap: wrap; width : 80%" >
+	style="display: flex; justify-content: center; flex-wrap: wrap; width : 85%" >
 <c:forEach var="p" items="${ListProduct}">
 	<div class="card" style="width: 18rem;">
 		<img class="card-img-top" src="./img/Products/${p.img.nom}"
@@ -35,12 +35,6 @@
 
 </section>
 
-<div>
-	<c:if test="${ListProduct.size() >= 20 }">
-		<button id="svt-${index}" class="btn btn-success svt"
-			onclick="Suivant(this)">suivant</button>
-	</c:if>
-</div>
 
 <script>
 	function Ajout(button) {
