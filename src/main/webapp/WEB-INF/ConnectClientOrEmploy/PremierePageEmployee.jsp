@@ -2,42 +2,36 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!-- <script>
-	var request;
-	function sendInfo() {
-		var v = document.vinform.t1.value;
-		var url = "Login.jsp?val=" + v;
 
-		if (window.XMLHttpRequest) {
-			request = new XMLHttpRequest();
-		} else if (window.ActiveXObject) {
-			request = new ActiveXObject("Microsoft.XMLHTTP");
-		}
-
-		try {
-			request.onreadystatechange = getInfo;
-			request.open("GET", url, true);
-			request.send();
-		} catch (e) {
-			alert("Unable to connect to server");
-		}
-	}
-
-	function getInfo() {
-		if (request.readyState == 4) {
-			var val = request.responseText;
-			document.getElementById('amit').innerHTML = val;
-		}
-	}
-</script> 
--->
 <section id="choix">
 	<marquee>
-		<h1>Un message qui ce deplace pour dire que c'est un employee </h1>
+		<h1>Flooooooooo suce bitch </h1>
 	</marquee>
-	<form name="vinform">
-		<input type="text" name="t1" onkeyup="sendInfo()">
-	</form>
+</section>
 
-	<span id="amit"> </span>
+<div>
+	<div onchange="myFunction()">
+		<form action="#">
+			<fieldset>
+				<label for="speed">Select a style : </label> <select name="speed"
+					id="speed">
+					<c:forEach var="pLine" items="${sessionScope.listLine}">
+						<option>${pLine.productLine}</option>
+
+					</c:forEach>
+				</select>
+			</fieldset>
+			<p id="demo"></p>
+		</form>
+	</div>
+	
+	<div id="recherche" style="display: flex; justify-content: center;">
+		<c:import url="/WEB-INF/ConnectClientOrEmploy/recherche.jsp"></c:import>
+	</div>
+</div>
+
+
+
+<section id="resultat">
+		<c:import url="/WEB-INF/ConnectClientOrEmploy/resultatRecherche.jsp"></c:import>
 </section>

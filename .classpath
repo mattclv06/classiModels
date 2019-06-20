@@ -29,7 +29,8 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/maxst/Desktop/mysql-connector-java-8.0.15.jar"/>
-	<classpathentry kind="lib" path="D:/Download Edge/javaee-api-8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CDI16/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CDI16/Downloads/javax.servlet-api-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/CDI16/Desktop/mysql-connector-java-8.0.15.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

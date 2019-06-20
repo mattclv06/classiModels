@@ -35,6 +35,7 @@ public abstract class AbstractDAO<T> {
         for ( int i = 0; i < objets.length; i++ ) {
             preparedStatement.setObject( i + 1, objets[i] );
         }
+        System.out.println( "sql dans abstractdao = : " + sql );
         System.out.println( preparedStatement );
         return preparedStatement;
     }

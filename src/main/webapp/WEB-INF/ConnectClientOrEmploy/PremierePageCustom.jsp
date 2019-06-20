@@ -7,9 +7,14 @@
 </div>
 <section id="choix">
 	<marquee>
+<<<<<<< HEAD
+		<h1>Un message qui ce deplace pour dire que c'est un client ! </h1>
+=======
 		<h1>Un message qui ce deplace pour dire que c'est un client et oui! </h1>
+>>>>>>> 721f28362c460498e0d033e13394dab513b59035
 	</marquee>
 </section>
+
 <div>
 	<div onchange="myFunction()">
 		<form action="#">
@@ -38,6 +43,7 @@
 </div>
 	
 </div>
+
 <script>
 	function myFunction() {
 		// ici je stock dans la variable productLine la valeur de l'élément du DOM correspond a l'ID speed

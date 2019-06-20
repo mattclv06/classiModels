@@ -9,8 +9,6 @@ import java.util.Properties;
 
 import com.mysql.cj.exceptions.DataTruncationException;
 
-import classiModels.BDD.DAO.CustomersDAO;
-import classiModels.BDD.DAO.EmployeesDAO;
 import classiModels.BDD.DAO.ImagesDAO;
 import classiModels.BDD.DAO.LiensImagesDAO;
 import classiModels.BDD.DAO.OfficesDAO;
@@ -105,18 +103,6 @@ public class DAOFactory {
 
     public ImagesDAO getImageDAO() {
         return new ImagesDAO( this );
-    }
-
-    // public LoginsDAO getLoginsDAO() {
-    // return new LoginsDAO( this );
-    // }
-
-    public EmployeesDAO getEmployeesDAO() {
-        return new EmployeesDAO( this );
-    }
-
-    public CustomersDAO getCustomersDAO() {
-        return new CustomersDAO( this );
     }
 
     public LiensImagesDAO getLiensImagesDAO() {
