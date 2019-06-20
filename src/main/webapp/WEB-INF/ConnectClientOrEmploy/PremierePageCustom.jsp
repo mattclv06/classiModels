@@ -25,9 +25,18 @@
 			<p id="demo"></p>
 		</form>
 	</div>
+	
 	<div id="Cars" style="display: flex; justify-content: center;">
 		<c:import url="/WEB-INF/ConnectClientOrEmploy/MorceauModele.jsp"></c:import>
 	</div>
+	
+	<div style="display : flex ; justify-content: center ; align-items: center">
+	<c:if test="${ListProduct.size() >= 20 }">
+		<button id="svt-${index}" class="btn btn-success svt"
+			onclick="Suivant(this)">suivant</button>
+	</c:if>
+</div>
+	
 </div>
 <script>
 	function myFunction() {
