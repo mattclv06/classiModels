@@ -8,25 +8,8 @@ public class Orders {
     private int                      orderNumber, customerNumber;
     private Date                     orderDate, requiredDate, shippedDate;
     private String                   status, comments;
-
     private ArrayList<OrdersDetails> listOrderDetails;
     private Customers                customers;
-
-    public ArrayList<OrdersDetails> getListOrderDetails() {
-        return listOrderDetails;
-    }
-
-    public void setListOrderDetails( ArrayList<OrdersDetails> listOrderDetails ) {
-        this.listOrderDetails = listOrderDetails;
-    }
-
-    public Customers getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers( Customers customers ) {
-        this.customers = customers;
-    }
 
     public int getOrderNumber() {
         return orderNumber;
@@ -82,6 +65,22 @@ public class Orders {
 
     public void setComments( String comments ) {
         this.comments = comments;
+    }
+
+    public ArrayList<OrdersDetails> getListOrderDetails() {
+        return listOrderDetails;
+    }
+
+    public void setListOrderDetails( ArrayList<OrdersDetails> listOrderDetails ) {
+        this.listOrderDetails = listOrderDetails;
+    }
+
+    public Customers getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers( Customers customers ) {
+        this.customers = customers;
     }
 
 }

@@ -10,6 +10,7 @@
 		<h1>Un message qui ce deplace pour dire que c'est un client ! </h1>
 	</marquee>
 </section>
+
 <div>
 	<div onchange="myFunction()">
 		<form action="#">
@@ -25,10 +26,12 @@
 			<p id="demo"></p>
 		</form>
 	</div>
+	
 	<div id="Cars" style="display: flex; justify-content: center;">
 		<c:import url="/WEB-INF/ConnectClientOrEmploy/MorceauModele.jsp"></c:import>
 	</div>
 </div>
+
 <script>
 	function myFunction() {
 		// ici je stock dans la variable productLine la valeur de l'élément du DOM correspond a l'ID speed

@@ -6,10 +6,11 @@
 	<head>
 		<meta charset="UTF-8" /><!-- Encodage en UTF-8-->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
-		<!-- CDN FontAwesome -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 		<!-- CDN Bootstrap -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<!-- CSS -->
 		  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 		<!-- Bootstrap core CSS -->
@@ -41,6 +42,7 @@
 		<div id="retour">  
 			<c:import url="/WEB-INF/ConnectClientOrEmploy/PremierePageEmployee.jsp" />
 		</div>
+		
 		<footer	class="page-footer text-center font-small mt-4 wow fadeIn couleurFramboise">
 			<c:import url="/Footer.jsp"></c:import>
 		</footer>
@@ -76,6 +78,7 @@
 						// changement de la div retour ! 
 						$("#retour").load("CreerMenuServlet");
 					});
+				 
 			});
 		</script>
 	</body>

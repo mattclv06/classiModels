@@ -1,14 +1,14 @@
-jQuery(document).ready(function($) {
-
-	$('#msg').html("This is updated by jQuery")
-
-});
-
-
-//double click pour effacer le text 
-$("p").dblclick(function(){
-    $(this).hide();
-  });
+//jQuery(document).ready(function($) {
+//
+//	$('#msg').html("This is updated by jQuery")
+//
+//});
+//
+//
+////double click pour effacer le text 
+//$("p").dblclick(function(){
+//    $(this).hide();
+//  });
 
 // action avec le passage de la souris ouvre un popup 
 //  $("#carre").mouseenter(function(){
@@ -34,24 +34,24 @@ $("p").dblclick(function(){
 //  });
 
 //le remet en blanc
-$("input").blur(function(){
-    $(this).css("background-color", "#ffffff");
-  });
-
-  //quand on est sur le focus ça met le fond en gris 
-  $("p").on({
-    mouseenter: function(){
-      $(this).css("background-color", "lightgray");
-    },
-    // ça le change de couleur quand on le quitte et met en bleu 
-    mouseleave: function(){
-      $(this).css("background-color", "lightblue");
-    },
-    // et quand on est en clique dessus ça faait en jaune 
-    click: function(){
-      $(this).css("background-color", "yellow");
-    }
-  }); 
+//$("input").blur(function(){
+//    $(this).css("background-color", "#ffffff");
+//  });
+//
+//  //quand on est sur le focus ça met le fond en gris 
+//  $("p").on({
+//    mouseenter: function(){
+//      $(this).css("background-color", "lightgray");
+//    },
+//    // ça le change de couleur quand on le quitte et met en bleu 
+//    mouseleave: function(){
+//      $(this).css("background-color", "lightblue");
+//    },
+//    // et quand on est en clique dessus ça faait en jaune 
+//    click: function(){
+//      $(this).css("background-color", "yellow");
+//    }
+//  }); 
 // cache et reaffiche 
   //$(".button").click(function(){
     //$("p").toggle();

@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<c:set var="totalCount" scope="session" value="0"/>
+			<c:set var="totalCount" scope="session" value="0" />
 			<c:forEach var="p" items="${sessionScope.listProductInPanier}">
 				<tr>
 					<td data-th="Product">
@@ -33,27 +33,21 @@
 					</td>
 
 					<td data-th="Price"><c:out value="${p.buyPrice}" /></td>
-					<td data-th="Quantity">
-					
-					<input id="quu-${ p.productCode }"
-						type="number" min="1" value="1"
-						class="form-control text-center" ></td>
-					<td data-th="Subtotal" class="text-center">
-					<c:out value="${p.quProduit}" /> x <c:out value="${p.buyPrice}"/>
-					<c:set var="SommeQuantiteCars" value="${p.total}" />
-					
-					</td>
+					<td data-th="Quantity"><input id="quu-${ p.productCode }"
+						type="number" min="1" value="1" class="form-control text-center"></td>
+					<td data-th="Subtotal" class="text-center"><c:out
+							value="${p.quProduit}" /> x <c:out value="${p.buyPrice}" /> <c:set
+							var="SommeQuantiteCars" value="${p.total}" /></td>
 					<td class="actions" data-th="">
 						<button class="btn btn-info btn-sm" id="${p.productCode}"
 							onclick="AjoutInPanier(this)">
 							Ajouter <i class="fa fa-refresh"></i>
 						</button>
-						<button class="btn btn-danger btn-sm" onclick="RemoveInPanier(this)" id="${p.productCode}">
+						<button class="btn btn-danger btn-sm"
+							onclick="RemoveInPanier(this)" id="${p.productCode}">
 							Effacer <i class="fa fa-trash-o"></i>
-						</button> 
-				Somme total de l'article : 
-				<c:out value="${p.total}€"/>
-				<c:set var="totalDesCommandes" value="${totalDesCommandes + p.total}" />
+						</button> Somme total de l'article : <c:out value="${p.total}€" /> <c:set
+							var="totalDesCommandes" value="${totalDesCommandes + p.total}" />
 					</td>
 				</tr>
 
@@ -61,7 +55,8 @@
 		</tbody>
 		<tfoot>
 			<tr class="visible-xs">
-				<td class="text-center"><strong>Sommes Total des Articles : <c:out value="${totalDesCommandes}"/> 
+				<td class="text-center"><strong>Sommes Total des
+						Articles : <c:out value="${totalDesCommandes}" />
 				</strong></td>
 			</tr>
 			<tr>
@@ -115,10 +110,3 @@ function RemoveInPanier(button) {
 
 }
 </script>
-
-<!--	$('#vider').click(function(e){
-		$('#PanierClient').load('acces-panier',{article:$(this).attr('id').substr(4), quantite: 0 , vider:1});
-		$('#nbArticle').load("Panier");
-		return false;
-	}); -->
-
